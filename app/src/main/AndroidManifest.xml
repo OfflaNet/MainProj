@@ -9,12 +9,13 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
-
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <permission
         android:name="android.permission.READ_CUSTOM_CONTACTS"
         android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
 
     <queries>
         <package android:name="com.android.subproj" />
@@ -28,6 +29,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.UrlSchemaActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.ServiceActivity"
             android:exported="false" />
@@ -105,7 +109,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
         <service
             android:name=".service.LocalMusicService"
             android:enabled="true"
@@ -120,7 +123,6 @@
             android:exported="true" />
 
         <receiver android:name=".receiver.MusicAlarmReceiver" />
-
         <receiver
             android:name=".receiver.BootReceiver"
             android:enabled="true"
